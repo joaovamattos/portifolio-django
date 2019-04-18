@@ -1,0 +1,21 @@
+
+{% extends 'blog/base.html' %}
+{% block main %}
+
+    <div class="container">
+        <h1 class="text-center m-2">Blog</h1>
+        <h2>Últimas publicações</h2>
+        {% for post in posts %}
+        <div>
+            <h3><a href="#">{{ post.titulo }}</a></h3>
+            <p>{{ post.data_publicacao }}</p>
+            <div class="d-flex justify-content-center">
+                <img  src="{{ post.foto.url }}" width="200px" height="200px">
+            </div>
+            <p>{{ post.texto|slice:'0:100' }}...</p>
+        </div>
+        {% endfor %}
+    </div>
+
+ {% endblock %}   
+
